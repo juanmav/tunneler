@@ -1,0 +1,38 @@
+tunnels:
+    # Desarrollo
+    - 8000:192.168.74.22:80                           # DC/OS
+    - 8001:marathon-lb.inf.marathon-bsa.mesos:20051   # Marathon
+    - 5000:192.168.74.24:5000                         # Registry
+    - 9090:marathon-lb.inf.marathon-bsa.mesos:9090    # Marathon-LB
+    - 20002:marathon-lb.inf.marathon-bsa.mesos:20002  # MS-Proxy
+    - 20003:marathon-lb.inf.marathon-bsa.mesos:20003  # MS-promotion
+    - 20005:marathon-lb.inf.marathon-bsa.mesos:20005  # MS-Mensajes
+    - 20006:marathon-lb.inf.marathon-bsa.mesos:20006  # MS-Core-Tx
+    - 20007:marathon-lb.inf.marathon-bsa.mesos:20007  # MS-Limits
+    - 20008:marathon-lb.inf.marathon-bsa.mesos:20008  # MS-Limits
+    - 20010:marathon-lb.inf.marathon-bsa.mesos:20010  # MS-Transaction
+    - 20011:marathon-lb.inf.marathon-bsa.mesos:20011  # MS-Oauth2
+    - 20015:marathon-lb.inf.marathon-bsa.mesos:20015  # MS-BuyerPaymentMethod
+    - 20020:marathon-lb.inf.marathon-bsa.mesos:20020  # MS-Discover
+    - 20021:marathon-lb.inf.marathon-bsa.mesos:20021  # MS-Kafka-Zookeoer
+    - 20022:marathon-lb.inf.marathon-bsa.mesos:20022  # MS-Kafka-jmx-br1
+    - 20023:marathon-lb.inf.marathon-bsa.mesos:20023  # MS-Kafka-srv-br1
+    - 20024:marathon-lb.inf.marathon-bsa.mesos:20024  # MS-Kafka-jmx-br2
+    - 20025:marathon-lb.inf.marathon-bsa.mesos:20025  # MS-Kafka-srv-br2
+    - 20036:marathon-lb.inf.marathon-bsa.mesos:20036  # ElasticSearchCluster-http(9200)
+    - 20037:marathon-lb.inf.marathon-bsa.mesos:20037  # ElasticSearchCluster-9300
+    - 20070:marathon-lb.inf.marathon-bsa.mesos:20070  # MS-Account
+    - 20075:marathon-lb.inf.marathon-bsa.mesos:20075  # MS-Users
+    - 23405:marathon-lb.inf.marathon-bsa.mesos:23405  # Kong Api
+    - 1433:172.16.1.28:1433                           # DB Dev
+    - 8091:172.16.2.101:8091                          # CouchBase DEV
+
+logging:
+    console: true
+
+hops:
+    - jump1:
+        host: 192.168.74.23
+        user: docker-bsa
+        auth:
+            key: ~/.ssh/id_rsa
