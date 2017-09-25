@@ -1,5 +1,30 @@
 # Tunneler
 
+## This is a brach with custom things. To by used internally in our team.
+
+--- **start of custom**
+
+1) Register your machine to de first jump:
+
+```
+$ register.sh "Mi Nombre y Apellido" docker-bsa 192.168.74.23
+```
+
+This is going ask you four things:
+
+- Enter file in which to save the key (/home/../...): (Press-Enter)
+- Enter passphrase (empty for no passphrase): (Press-Enter)
+- Enter same passphrase again: (Press-Enter)
+- The password of the serve which you want to do the first jump.
+
+2) Tunneler ( to connect!)
+
+```
+$ ./run.sh
+```
+
+--- **end of custom**
+
 ## Configuration
 By default, tunneler searches for a `config.yml` file next to it. You can set the path to a different one by providing it as  a parameter.
 
